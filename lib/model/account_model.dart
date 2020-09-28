@@ -9,25 +9,34 @@ class Account {
   final String id;
 
   Account(
-      [this.accountName,
+      {this.accountName,
       this.accountNumber,
       this.phoneNumber,
       this.accountBalance,
       this.deposit,
       this.withrawal,
-      this.time]);
+      this.time,
+      this.id});
 
   Account.fromMap(Map<String, dynamic> data, String id)
-      : title = data["title"],
-        description = data['description'],
-        author = data["author"],
+      : accountName = data["accountName"],
+        accountNumber = data["accountNumber"],
+        accountBalance = data["accountBalance"],
+        deposit = data["deposit"],
+        withrawal = data["withrawal"],
+        time = data["time"],
+        phoneNumber = data["phoneNumber"],
         id = id;
 
   Map<String, dynamic> toMap() {
     return {
-      "title": title,
-      "description": description,
-      "author": author,
+      "accountName": accountName,
+      "accountNumber": accountNumber,
+      "accountBalance": accountBalance,
+      "deposit": deposit,
+      "withrawal": withrawal,
+      "time": time,
+      "phoneNumber": phoneNumber,
     };
   }
 }
